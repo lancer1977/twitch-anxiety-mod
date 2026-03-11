@@ -23,6 +23,9 @@ Load unpacked extension from this folder in Chrome.
 3. Click **Load unpacked**
 4. Select `~/code/twitch-anxiety-mod`
 
+## Quick Download (v1.0.2)
+- https://github.com/lancer1977/twitch-anxiety-mod/archive/refs/tags/v1.0.2.zip
+
 
 ## v0.3 Features
 - Optional hide of entire left sidebar
