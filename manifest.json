@@ -2,17 +2,35 @@
   "manifest_version": 3,
   "name": "Twitch Anxiety Mod",
   "description": "Hide follows, viewer counts, and social-pressure numbers on Twitch.",
-  "version": "0.1.0",
-  "permissions": ["storage"],
-  "host_permissions": ["https://www.twitch.tv/*"],
+  "version": "0.3.1",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.twitch.tv/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://www.twitch.tv/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://www.twitch.tv/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
   "action": {
-    "default_title": "Twitch Anxiety Mod"
+    "default_title": "Twitch Anxiety Mod",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "store-assets/icons/icon-16.png",
+      "48": "store-assets/icons/icon-48.png"
+    }
+  },
+  "icons": {
+    "16": "store-assets/icons/icon-16.png",
+    "48": "store-assets/icons/icon-48.png",
+    "128": "store-assets/icons/icon-128.png"
   }
 }
