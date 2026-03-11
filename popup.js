@@ -3,7 +3,8 @@ const DEFAULTS = {
   hideViewers: true,
   hideFollowers: true,
   hideWatchingNow: true,
-  strictMode: false
+  strictMode: false,
+  hideLeftSidebar: true
 };
 
 const ids = Object.keys(DEFAULTS);

@@ -4,7 +4,8 @@
     hideViewers: true,
     hideFollowers: true,
     hideWatchingNow: true,
-    strictMode: false
+    strictMode: false,
+    hideLeftSidebar: true
   };
 
   const SELECTORS = {
@@ -79,6 +80,11 @@
       hideBySelectors(SELECTORS.numericBadges);
       hideByText((t) => TEXT_PATTERNS.numericOnly.test(t));
     }
+
+    if (settings.hideLeftSidebar) {
+      hideBySelectors(SELECTORS.leftSidebar);
+    }
+
   }
 
   function run() {

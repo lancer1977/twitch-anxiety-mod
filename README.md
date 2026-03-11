@@ -22,3 +22,8 @@ Load unpacked extension from this folder in Chrome.
 2. Enable Developer mode
 3. Click **Load unpacked**
 4. Select `~/code/twitch-anxiety-mod`
+
+
+## v0.3 Features
+- Optional hide of entire left sidebar
+- Better Twitch side-nav selector coverage
