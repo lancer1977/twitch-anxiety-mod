@@ -1,0 +1,4 @@
+body { font-family: Inter, system-ui, sans-serif; margin: 12px; width: 280px; }
+h1 { font-size: 14px; margin: 0 0 10px; }
+label { display: block; margin: 8px 0; font-size: 13px; }
+.hint { margin-top: 10px; font-size: 11px; color: #666; }

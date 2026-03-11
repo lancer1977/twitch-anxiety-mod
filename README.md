@@ -10,3 +10,15 @@ Reduce anxiety/distraction by removing social-pressure numbers across Twitch pag
 
 ## Dev
 Load unpacked extension from this folder in Chrome.
+
+
+## v0.2 Features
+- Popup settings UI
+- Per-element toggles (viewers, followers, watching-now)
+- Strict mode to hide numeric badges
+
+## Load in Chrome
+1. Open `chrome://extensions`
+2. Enable Developer mode
+3. Click **Load unpacked**
+4. Select `~/code/twitch-anxiety-mod`
