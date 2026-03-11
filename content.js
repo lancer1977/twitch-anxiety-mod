@@ -25,6 +25,16 @@
       '[class*="badge"]',
       '[class*="count"]',
       '[data-test-selector*="count"]'
+    ],
+    leftSidebar: [
+      // your exact dump anchors
+      '[data-a-target="side-nav-bar"]',
+      '[data-test-selector="side-nav"]',
+      '#side-nav',
+      'nav[aria-label="Left Navigation"]',
+      '.side-nav',
+      '.side-nav__overlay-wrapper',
+      '.side-nav__scrollable_content'
     ]
   };
 
@@ -35,10 +45,62 @@
     numericOnly: /^\d+[\d,.KMBkmb]*$/
   };
 
+  let styleTag;
+
+  function ensureStyleTag() {
+    if (styleTag && document.contains(styleTag)) return styleTag;
+    styleTag = document.createElement('style');
+    styleTag.id = 'tam-style';
+    document.documentElement.appendChild(styleTag);
+    return styleTag;
+  }
+
+  function applySidebarCollapseCss() {
+    const css = `
+      /* Hard kill side nav */
+      [data-a-target="side-nav-bar"],
+      [data-test-selector="side-nav"],
+      #side-nav,
+      nav[aria-label="Left Navigation"],
+      .side-nav,
+      .side-nav__overlay-wrapper,
+      .side-nav__scrollable_content {
+        display: none !important;
+        width: 0 !important;
+        min-width: 0 !important;
+        max-width: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        visibility: hidden !important;
+      }
+
+      /* Collapse common Twitch layout gutters after nav removal */
+      [class*="persistent-nav"],
+      [class*="side-nav"],
+      main,
+      .main,
+      [role="main"] {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+      }
+    `;
+    ensureStyleTag().textContent = css;
+  }
+
+  function clearSidebarCollapseCss() {
+    if (styleTag) styleTag.textContent = '';
+  }
+
   function hideElement(el) {
     if (!el || el.dataset.tamHidden === '1') return;
     el.dataset.tamHidden = '1';
     el.style.setProperty('display', 'none', 'important');
+    el.style.setProperty('width', '0', 'important');
+    el.style.setProperty('min-width', '0', 'important');
+    el.style.setProperty('max-width', '0', 'important');
+    el.style.setProperty('margin', '0', 'important');
+    el.style.setProperty('padding', '0', 'important');
   }
 
   function hideBySelectors(selectors) {
@@ -59,7 +121,10 @@
   }
 
   function applySettings(settings) {
-    if (!settings.enabled) return;
+    if (!settings.enabled) {
+      clearSidebarCollapseCss();
+      return;
+    }
 
     if (settings.hideViewers) {
       hideBySelectors(SELECTORS.viewers);
@@ -83,8 +148,10 @@
 
     if (settings.hideLeftSidebar) {
       hideBySelectors(SELECTORS.leftSidebar);
+      applySidebarCollapseCss();
+    } else {
+      clearSidebarCollapseCss();
     }
-
   }
 
   function run() {
