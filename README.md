@@ -30,3 +30,9 @@ Load unpacked extension from this folder in Chrome.
 ## v0.3 Features
 - Optional hide of entire left sidebar
 - Better Twitch side-nav selector coverage
+
+
+## 📖 Documentation
+Detailed documentation can be found in the following sections:
+- [Feature Index](./docs/features/README.md)
+- [Core Capabilities](./docs/features/core-capabilities.md)
