@@ -4,7 +4,8 @@ const DEFAULTS = {
   hideFollowers: true,
   hideWatchingNow: true,
   strictMode: false,
-  hideLeftSidebar: true
+  hideLeftSidebar: true,
+  hideSuggestions: true
 };
 
 const ids = Object.keys(DEFAULTS);

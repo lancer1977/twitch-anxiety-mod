@@ -5,7 +5,8 @@
     hideFollowers: true,
     hideWatchingNow: true,
     strictMode: false,
-    hideLeftSidebar: true
+    hideLeftSidebar: true,
+    hideSuggestions: true
   };
 
   const SELECTORS = {
@@ -35,6 +36,17 @@
       '.side-nav',
       '.side-nav__overlay-wrapper',
       '.side-nav__scrollable_content'
+    ],
+    suggestions: [
+      '[data-a-target*="recommend" i]',
+      '[data-a-target*="suggest" i]',
+      '[data-a-target*="collab" i]',
+      '[data-test-selector*="recommend" i]',
+      '[data-test-selector*="suggest" i]',
+      '[data-test-selector*="collab" i]',
+      '[aria-label*="recommended" i]',
+      '[aria-label*="suggested" i]',
+      '[aria-label*="collab" i]'
     ]
   };
 
@@ -42,10 +54,13 @@
     viewers: /\b\d+[\d,.]*\s*viewers?\b/i,
     followers: /\b\d+[\d,.]*\s*followers?\b/i,
     watchingNow: /\bwatching now\b/i,
-    numericOnly: /^\d+[\d,.KMBkmb]*$/
+    numericOnly: /^\d+[\d,.KMBkmb]*$/,
+    suggestions: /\b(recommended|recommendations?|suggested|suggestions?|suggested\s+collabs?|collab\s+suggestions?|channels?\s+we\s+think\s+you'?ll\s+like|because\s+you\s+watch)\b/i
   };
 
   let styleTag;
+  let currentSettings = { ...DEFAULTS };
+  let runTimer;
 
   function ensureStyleTag() {
     if (styleTag && document.contains(styleTag)) return styleTag;
@@ -110,6 +125,7 @@
   }
 
   function hideByText(testFn) {
+    if (!document.body) return;
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
     while (walker.nextNode()) {
       const el = walker.currentNode;
@@ -120,7 +136,26 @@
     }
   }
 
+  function hideSuggestionsByText() {
+    if (!document.body) return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+    while (walker.nextNode()) {
+      const el = walker.currentNode;
+      if (!el || !el.textContent) continue;
+      const text = el.textContent.trim();
+      if (!text || text.length > 140 || el.childElementCount > 8) continue;
+      if (!TEXT_PATTERNS.suggestions.test(text)) continue;
+
+      const card = el.closest(
+        'section, article, aside, [data-a-target], [data-test-selector], [role="complementary"]'
+      );
+      hideElement(card || el);
+    }
+  }
+
   function applySettings(settings) {
+    currentSettings = { ...DEFAULTS, ...settings };
+
     if (!settings.enabled) {
       clearSidebarCollapseCss();
       return;
@@ -152,17 +187,38 @@
     } else {
       clearSidebarCollapseCss();
     }
+
+    if (settings.hideSuggestions) {
+      hideBySelectors(SELECTORS.suggestions);
+      hideSuggestionsByText();
+    }
   }
 
   function run() {
-    chrome.storage.sync.get(DEFAULTS, applySettings);
+    applySettings(currentSettings);
   }
 
-  run();
-  const observer = new MutationObserver(run);
+  function scheduleRun() {
+    if (runTimer) return;
+    runTimer = window.setTimeout(() => {
+      runTimer = undefined;
+      run();
+    }, 250);
+  }
+
+  chrome.storage.sync.get(DEFAULTS, (settings) => {
+    currentSettings = { ...DEFAULTS, ...settings };
+    run();
+  });
+
+  const observer = new MutationObserver(scheduleRun);
   observer.observe(document.documentElement, { childList: true, subtree: true });
 
   chrome.storage.onChanged.addListener((changes, area) => {
-    if (area === 'sync') run();
+    if (area !== 'sync') return;
+    Object.keys(changes).forEach((key) => {
+      currentSettings[key] = changes[key].newValue;
+    });
+    scheduleRun();
   });
 })();
