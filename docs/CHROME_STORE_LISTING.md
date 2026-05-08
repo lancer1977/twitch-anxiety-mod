@@ -15,6 +15,7 @@ Twitch Anxiety Mod removes social-pressure UI from Twitch so you can focus on co
 - Hide “watching now” labels
 - Strict mode to hide numeric badges
 - Optional full left sidebar hide/collapse
+- Optional hide of chat messages from listed users
 - Simple popup toggles
 
 ### Privacy
@@ -25,7 +26,7 @@ Twitch Anxiety Mod removes social-pressure UI from Twitch so you can focus on co
 
 ### Permissions
 - `https://www.twitch.tv/*` to modify Twitch page UI
-- `storage` to save your toggle preferences
+- `storage` to save your toggle preferences and local chat-user list
 
 ### Notes
 Twitch updates its UI regularly. If an element reappears, update the extension and we’ll patch selector coverage.

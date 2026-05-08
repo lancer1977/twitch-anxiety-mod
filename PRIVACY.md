@@ -1,12 +1,13 @@
 # Privacy Policy — Twitch Anxiety Mod
 
-Last updated: 2026-03-10
+Last updated: 2026-05-07
 
 Twitch Anxiety Mod does **not** collect, store, transmit, or sell personal data.
 
 ## What the extension does
 - Hides Twitch UI elements (viewer counts, follower counts, watching-now labels, optional left sidebar).
 - Stores your toggle preferences locally using Chrome extension storage (`chrome.storage.sync`).
+- Stores an optional local list of chat usernames to hide in Twitch chat.
 
 ## Data handling
 - **Collected:** None

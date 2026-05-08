@@ -12,7 +12,7 @@ tags: [documentation, twitch-anxiety-mod]
 # twitch-anxiety-mod
 
 ## Summary
-Inferred primary feature for twitch-anxiety-mod.
+Primary feature area for twitch-anxiety-mod, covering the popup settings surface and the Twitch content-script filters.
 
 ## Behavior
-Standard behavior for twitch-anxiety-mod.
+Hides viewer-pressure UI, recommendation surfaces, and chat messages from a locally managed username list. The left sidebar is hidden on streamer/channel pages, but left visible on the root Twitch homepage.

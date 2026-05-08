@@ -14,6 +14,20 @@
     <label><input type="checkbox" id="strictMode" /> Strict mode (hide numeric badges)</label>
     <label><input type="checkbox" id="hideLeftSidebar" /> Hide left sidebar</label>
     <label><input type="checkbox" id="hideSuggestions" /> Hide suggested collabs and recommendations</label>
+    <label><input type="checkbox" id="hideChatUsers" /> Hide chat messages from listed users</label>
+    <label class="field">
+      <span>Hidden chat users</span>
+      <textarea id="hiddenChatUsers" rows="4" placeholder="user1, user2&#10;@user3"></textarea>
+    </label>
+    <p class="hint status" id="hiddenChatUsersCount" aria-live="polite"></p>
+    <div class="actions">
+      <button type="button" id="exportChatUsers">Export list</button>
+      <button type="button" id="importChatUsers">Import list</button>
+      <button type="button" id="clearChatUsers">Clear list</button>
+      <input type="file" id="chatUsersFile" accept=".txt,.csv,.json,text/plain" hidden />
+    </div>
+    <p class="hint">Separate names with commas, semicolons, or new lines.</p>
+    <p class="hint status" id="chatUsersStatus" aria-live="polite"></p>
     <p class="hint">Refresh Twitch tabs after changing settings.</p>
     <script src="popup.js"></script>
   </body>

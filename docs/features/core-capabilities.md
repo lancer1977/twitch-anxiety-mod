@@ -23,3 +23,4 @@ twitch-anxiety-mod provides foundational capabilities that extend beyond its pri
 - Left sidebar follows
 - Viewer/follower counts
 - "Watching now" style counters
+- Chat messages from listed users

@@ -1,4 +1,35 @@
-body { font-family: Inter, system-ui, sans-serif; margin: 12px; width: 280px; }
+body { font-family: Inter, system-ui, sans-serif; margin: 12px; width: 320px; }
 h1 { font-size: 14px; margin: 0 0 10px; }
 label { display: block; margin: 8px 0; font-size: 13px; }
+.field { display: block; margin-top: 10px; }
+.field span { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 600; }
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+  min-height: 72px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+button {
+  flex: 1 1 30%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #f4f4f4;
+  font: inherit;
+  cursor: pointer;
+}
+.status {
+  min-height: 1em;
+  margin-top: 6px;
+}
 .hint { margin-top: 10px; font-size: 11px; color: #666; }

@@ -20,6 +20,7 @@ This directory documents all features and roadmap items. All state is now tracke
 - [Viewer/follower counts](./viewer-follower-counts.md)
 - [Watching now style counters](./watching-now-style-counters.md)
 - [Recommendation surfaces](./recommendation-surfaces/README.md)
+- [Chat user hiding](./chat-user-hiding/README.md)
 - [Sub-module: store-assets](./sub-module-store-assets.md)
 - [Sub-module: scripts](./sub-module-scripts.md)
 

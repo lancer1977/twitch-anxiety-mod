@@ -1,41 +1,84 @@
 # twitch-anxiety-mod
 
-Chrome extension to hide viewer-pressure UI on Twitch:
+Chrome extension to reduce Twitch anxiety/distraction by hiding viewer-pressure UI:
+
 - Left sidebar follows
 - Viewer/follower counts
 - "Watching now" style counters
 - Suggested collabs and recommendation surfaces
+- Chat messages from listed users
 
-## Goal
-Reduce anxiety/distraction by removing social-pressure numbers across Twitch pages.
+## Quick Sideload Install
 
-## Dev
-Load unpacked extension from this folder in Chrome.
+Use this path when you want to run the extension locally without the Chrome Web Store.
 
+### Option A: Load this repo directly
 
-## v0.2 Features
-- Popup settings UI
-- Per-element toggles (viewers, followers, watching-now)
-- Strict mode to hide numeric badges
+1. Open Chrome.
+2. Go to `chrome://extensions`.
+3. Turn on **Developer mode** in the top-right corner.
+4. Click **Load unpacked**.
+5. Select this repo folder:
 
-## Load in Chrome
-1. Open `chrome://extensions`
-2. Enable Developer mode
-3. Click **Load unpacked**
-4. Select `~/code/twitch-anxiety-mod`
+   ```text
+   /home/lancer1977/code/twitch-anxiety-mod
+   ```
 
-## Quick Download (v1.0.2)
-- https://github.com/lancer1977/twitch-anxiety-mod/archive/refs/tags/v1.0.2.zip
+6. Open Twitch or refresh any Twitch tabs that were already open.
+7. Pin the extension if you want quick access to the popup toggles.
 
+### Option B: Build and load a clean ZIP copy
 
-## v0.3 Features
-- Optional hide of entire left sidebar
+Use this when you want to test the same packaged files that would be shared or uploaded.
+
+1. Build the ZIP:
+
+   ```bash
+   bash scripts/build-zip.sh
+   ```
+
+2. Unzip `dist/twitch-anxiety-mod.zip` into a temporary folder.
+3. Open `chrome://extensions`.
+4. Turn on **Developer mode**.
+5. Click **Load unpacked**.
+6. Select the unzipped folder that contains `manifest.json`.
+7. Open Twitch or refresh any Twitch tabs that were already open.
+
+Chrome cannot install this ZIP directly. The ZIP must be unzipped first, then loaded with **Load unpacked**.
+
+## Using the Extension
+
+1. Click the extension icon.
+2. Turn features on or off in the popup.
+3. Add hidden chat usernames one per line, or separated by commas or semicolons.
+4. Use **Import list** or **Export list** to move the hidden-user list between installs.
+5. Refresh Twitch tabs after changing settings.
+
+## Update an Existing Sideload
+
+When the repo changes:
+
+1. Pull or copy the updated files.
+2. Go to `chrome://extensions`.
+3. Find **Twitch Anxiety Mod**.
+4. Click the reload icon on the extension card.
+5. Refresh open Twitch tabs.
+
+## Chrome Web Store
+
+Chrome Web Store publishing is a second distribution goal. See [`docs/roadmaps/distribution-and-store-publishing/README.md`](./docs/roadmaps/distribution-and-store-publishing/README.md).
+
+## Features
+
+- Optional hide of the left sidebar on streamer/channel pages, but not on the Twitch home/root/browse pages
 - Better Twitch side-nav selector coverage
 - Cached settings and throttled DOM scanning to reduce Twitch page overhead
 - Optional hide of suggested collabs and recommendations
+- Optional hide of chat messages from listed users
 
+## Documentation
 
-## 📖 Documentation
-Detailed documentation can be found in the following sections:
 - [Feature Index](./docs/features/README.md)
 - [Core Capabilities](./docs/features/core-capabilities.md)
+- [Troubleshooting](./docs/TROUBLESHOOTING.md)
+- [Release Checklist](./docs/RELEASE_CHECKLIST.md)
