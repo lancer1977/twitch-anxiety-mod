@@ -68,6 +68,8 @@ When the repo changes:
 
 Chrome Web Store publishing is a second distribution goal. See [`docs/roadmaps/distribution-and-store-publishing/README.md`](./docs/roadmaps/distribution-and-store-publishing/README.md).
 
+Release ZIPs are published through GitHub Releases and can be used for manual unpacked installs while the store submission is in flight.
+
 ## Features
 
 - Optional hide of the left sidebar on streamer/channel pages, but not on the Twitch home/root/browse pages

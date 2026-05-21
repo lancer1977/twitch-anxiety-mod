@@ -6,6 +6,8 @@
 - [x] README has a clean ZIP-build sideload path.
 - [x] README explains that Chrome ZIPs must be unzipped before **Load unpacked**.
 - [x] Troubleshooting covers common sideload mistakes.
+- [x] CI validates the manifest and browser scripts.
+- [x] CI builds the release ZIP.
 - [ ] Manually load the repo folder in Chrome and verify the popup opens.
 - [ ] Manually refresh a Twitch tab and verify the enabled filters apply.
 
@@ -19,6 +21,7 @@
 - [x] Icons generated (16/48/128)
 - [x] Download install path documented
 - [x] Chat-user hide list added to popup and content script
+- [x] GitHub Releases upload path defined
 - [ ] Screenshots captured from extension popup + Twitch page
 - [x] ZIP package generated
 

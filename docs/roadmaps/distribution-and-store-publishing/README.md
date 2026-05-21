@@ -24,6 +24,7 @@ This roadmap tracks the two distribution paths for twitch-anxiety-mod:
 - Make the non-store install path explicit and repeatable.
 - Keep the README focused on the fastest sideload path.
 - Keep the build artifact easy to package and share.
+- Automate validation and release packaging through GitHub Actions.
 - Submit the extension to the Chrome Web Store after the current feature set is stable.
 
 ## Blockers
@@ -41,7 +42,7 @@ This roadmap tracks the two distribution paths for twitch-anxiety-mod:
 - [x] Keep the ZIP artifact generation script in the repo.
 - [x] Add a release notes template for non-store builds.
 - [x] Add a troubleshooting guide for common install and runtime mistakes.
-- [ ] Decide whether the download should be published through GitHub Releases, a site download link, or both.
+- [x] Decide to publish the download through GitHub Releases.
 
 ### Phase 2: Chrome Web Store
 
@@ -54,7 +55,15 @@ This roadmap tracks the two distribution paths for twitch-anxiety-mod:
 - [ ] Submit the extension to the Chrome Web Store.
 - [ ] Track review feedback and rejections as checklist items.
 
-### Phase 3: Maintenance
+### Phase 3: CI/CD
+
+- [x] Add push and pull-request validation in GitHub Actions.
+- [x] Build the release ZIP in CI.
+- [x] Upload the ZIP as a build artifact.
+- [x] Create a tagged release workflow that publishes the ZIP to GitHub Releases.
+- [ ] Add an optional manual workflow for store-only packaging if the dashboard workflow needs a dedicated artifact.
+
+### Phase 4: Maintenance
 
 - [ ] Define the release bump cadence for new Twitch selector fixes.
 - [ ] Keep the install docs synchronized with the actual download location.

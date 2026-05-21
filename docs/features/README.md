@@ -28,3 +28,4 @@ This directory documents all features and roadmap items. All state is now tracke
 ## Beyond the App
 
 - Shared utilities and local development tools.
+- [Release automation](./release-automation/README.md)
