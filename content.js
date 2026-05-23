@@ -432,6 +432,18 @@
     }, 250);
   }
 
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+      parseNameList,
+      isChannelLikePage,
+      shouldHideSidebar,
+    };
+  }
+
+  if (typeof document === 'undefined' || typeof chrome === 'undefined') {
+    return;
+  }
+
   chrome.storage.sync.get(DEFAULTS, (settings) => {
     currentSettings = { ...DEFAULTS, ...settings };
     run();
