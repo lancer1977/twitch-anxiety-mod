@@ -8,6 +8,15 @@ Chrome extension to reduce Twitch anxiety/distraction by hiding viewer-pressure 
 - Suggested collabs and recommendation surfaces
 - Chat messages from listed users
 
+## Tags
+
+- twitch-anxiety-mod
+- twitch
+- mod
+- docs
+- anxiety
+- chat
+
 ## Quick Sideload Install
 
 Use this path when you want to run the extension locally without the Chrome Web Store.
