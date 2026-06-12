@@ -30,7 +30,7 @@
 - [ ] Expand runbooks for recurring operator or publishing workflows
 - [ ] Standardize naming and checklist structure for future items
 
-## V10 (scale)
+## V4 (scale)
 - [ ] Move to a stable platform pattern with cross-repo checklist templates
 - [ ] Split roadmap into discrete feature-level and initiative-level folders
 - [ ] Define long-range acceptance criteria with operational and product owners

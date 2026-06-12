@@ -89,6 +89,7 @@ Release ZIPs are published through GitHub Releases and can be used for manual un
 
 ## Documentation
 
+- [Docs Home](./docs/README.md)
 - [Feature Index](./docs/features/README.md)
 - [Core Capabilities](./docs/features/core-capabilities.md)
 - [Troubleshooting](./docs/TROUBLESHOOTING.md)
