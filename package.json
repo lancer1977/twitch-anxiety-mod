@@ -1,0 +1,10 @@
+{
+  "name": "twitch-anxiety-mod",
+  "private": true,
+  "version": "0.3.1",
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/*.test.mjs && node scripts/validate.mjs",
+    "smoke": "bash scripts/build-zip.sh"
+  }
+}

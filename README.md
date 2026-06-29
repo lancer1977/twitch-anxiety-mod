@@ -23,6 +23,22 @@ Load unpacked extension from this folder in Chrome.
 3. Click **Load unpacked**
 4. Select `~/code/twitch-anxiety-mod`
 
+## Validation
+
+Run the repo-native validation path from a fresh checkout:
+
+```bash
+npm ci
+npm test
+npm run smoke
+```
+
+`npm test` validates the manifest, required extension assets, and browser script
+syntax. `npm run smoke` builds `dist/twitch-anxiety-mod.zip`, the artifact that
+can be loaded manually in Chrome or uploaded for store review. The GitHub
+Actions `Validate` workflow runs the same commands and uploads that ZIP.
+
+No repository secrets are required for local validation or CI.
 
 ## v0.3 Features
 - Optional hide of entire left sidebar
