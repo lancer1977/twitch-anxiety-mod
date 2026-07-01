@@ -1,0 +1,260 @@
+{
+  "report_version": "standards-scan/v1",
+  "scan_version": "1.0.0",
+  "generated_at": "2026-06-23T17:09:55.124315+00:00",
+  "scan_roots": [],
+  "focus_roots": [],
+  "repos_scanned": 1,
+  "repos_skipped": 0,
+  "strict": {
+    "enabled": false,
+    "open_cards_max": -1,
+    "failures": 0
+  },
+  "repository_count": 1,
+  "summary": {
+    "total": 1,
+    "ok": 0,
+    "warn": 1,
+    "missing": 0,
+    "open_cards_total": 0,
+    "actionable": 1,
+    "strict_failures": 0
+  },
+  "repos": [
+    {
+      "path": "/mnt/data/lancer1977/code/twitch-anxiety-mod",
+      "exists": true,
+      "readable": true,
+      "signature": "625d608070d65e527d0cd408114c7ce2f38593aca0d61986cd6368e4f44afbbd",
+      "status": "warn",
+      "required": {
+        "ok": false,
+        "found": [
+          "README.md",
+          "AGENTS.md",
+          "DEV_STUDIO.md",
+          "00_agile",
+          "00_agile/planning",
+          "00_agile/backlog",
+          "00_agile/spec",
+          "00_agile/doing",
+          "00_agile/review",
+          "00_agile/done",
+          "docs"
+        ],
+        "missing": [
+          "workflows"
+        ]
+      },
+      "recommended": {
+        "ok": false,
+        "found": [
+          "memory"
+        ],
+        "missing": [
+          "templates",
+          "runtime",
+          ".env.example"
+        ]
+      },
+      "open_cards": {
+        "planning": 0,
+        "backlog": 0,
+        "spec": 0,
+        "doing": 0,
+        "review": 0,
+        "done": 0,
+        "total_open": 0
+      },
+      "doc_health": {
+        "status": "ok",
+        "score": 3,
+        "details": {
+          "readme_exists": true,
+          "readme_size": 2943,
+          "agents_exists": true,
+          "agents_size": 2868,
+          "docs_root_exists": true,
+          "docs_root_entries": 7,
+          "workflows_exists": false,
+          "workflows_entries": 0,
+          "required_missing": [
+            "workflows"
+          ]
+        }
+      },
+      "test_health": {
+        "status": "ok",
+        "signals": 4,
+        "details": {
+          "has_ci": true,
+          "ci_workflows": 2,
+          "has_test_dir": true,
+          "has_pytest_hint": true,
+          "has_js_test_script": true,
+          "has_dotnet_test_project": false
+        }
+      },
+      "ci_health": {
+        "status": "ok",
+        "workflows": [
+          ".github/workflows/ci.yml",
+          ".github/workflows/release.yml"
+        ],
+        "recommendations": []
+      },
+      "branch_health": {
+        "status": "ok",
+        "branch": "main",
+        "head": "17a14418b12e9f20a1833590ce3d5d574cf0f635",
+        "head_age_days": 1,
+        "stale": false,
+        "detached": false,
+        "recommendations": []
+      },
+      "dirty_worktree": {
+        "status": "ok",
+        "dirty": false,
+        "changes": 0,
+        "untracked": 0,
+        "artifact_changes": 0,
+        "artifact_paths": [],
+        "recommendations": []
+      },
+      "strict_violations": [],
+      "issues": [
+        "missing_required:workflows",
+        "missing_recommended:templates",
+        "missing_recommended:runtime",
+        "missing_recommended:.env.example"
+      ]
+    }
+  ],
+  "preparedness": {
+    "version": "preparedness/v1",
+    "scan_version": "1.0.0",
+    "generated_at": "2026-06-23T17:09:55.124305+00:00",
+    "repository_count": 1,
+    "overall": {
+      "readiness_score": 84,
+      "delta_readiness_score": 0,
+      "by_readiness": {
+        "ready": 0,
+        "in_progress": 1,
+        "needs_work": 0
+      },
+      "by_status": {
+        "ok": 0,
+        "warn": 1,
+        "missing": 0
+      },
+      "ci_attention": 0,
+      "branch_attention": 0,
+      "dirty_attention": 0
+    },
+    "open_cards": {
+      "total": 0,
+      "delta_total": 0,
+      "by_stage": {
+        "planning": 0,
+        "backlog": 0,
+        "spec": 0,
+        "doing": 0,
+        "review": 0,
+        "done": 0
+      }
+    },
+    "baseline_comparison": {
+      "available": false,
+      "baseline_path": ".devstudio/runtime/standards-scan/preparedness-baseline.json",
+      "generated_at": null,
+      "readiness_score": null,
+      "delta_readiness_score": null,
+      "open_cards": {
+        "total": null,
+        "delta_total": null
+      },
+      "regressions": []
+    },
+    "class_thresholds": {
+      "apps": 70,
+      "tooling": 60,
+      "library": 65,
+      "docs-only": 45
+    },
+    "alerts": {
+      "enabled": false,
+      "alert_count": 0,
+      "readiness_drop": []
+    },
+    "repositories": [
+      {
+        "path": "/mnt/data/lancer1977/code/twitch-anxiety-mod",
+        "readiness": "in_progress",
+        "readiness_score": 84,
+        "delta_readiness_score": 0,
+        "status": "warn",
+        "open_cards_total": 0,
+        "delta_open_cards_total": 0,
+        "repo_class": "apps",
+        "repo_class_threshold": 70,
+        "repo_class_delta": 14,
+        "meets_repo_class_threshold": true,
+        "required_missing": [
+          "workflows"
+        ],
+        "doc_health": "ok",
+        "doc_health_score": 3,
+        "test_health": "ok",
+        "test_health_signals": 4,
+        "ci_health": {
+          "status": "ok",
+          "workflows": [
+            ".github/workflows/ci.yml",
+            ".github/workflows/release.yml"
+          ],
+          "recommendations": []
+        },
+        "branch_health": {
+          "status": "ok",
+          "branch": "main",
+          "head": "17a14418b12e9f20a1833590ce3d5d574cf0f635",
+          "head_age_days": 1,
+          "stale": false,
+          "detached": false,
+          "recommendations": []
+        },
+        "dirty_worktree": {
+          "status": "ok",
+          "dirty": false,
+          "changes": 0,
+          "untracked": 0,
+          "artifact_changes": 0,
+          "artifact_paths": [],
+          "recommendations": []
+        },
+        "issues": [
+          "missing_recommended:.env.example",
+          "missing_recommended:runtime",
+          "missing_recommended:templates"
+        ]
+      }
+    ],
+    "top_action_items": [
+      {
+        "path": "/mnt/data/lancer1977/code/twitch-anxiety-mod",
+        "readiness": "in_progress",
+        "readiness_score": 84,
+        "open_cards_total": 0,
+        "repo_class": "apps",
+        "repo_class_threshold": 70,
+        "issues": [
+          "missing_recommended:.env.example",
+          "missing_recommended:runtime",
+          "missing_recommended:templates"
+        ]
+      }
+    ]
+  }
+}
